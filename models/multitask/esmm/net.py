@@ -56,7 +56,7 @@ class ESMMLayer(nn.Layer):
                 self.add_sublayer('act_%d' % i, act)
                 self._ctr_mlp_layers.append(act)
 
-        # ctr part
+        # cvr part
         cvr_sizes = [sparse_feature_dim * num_field
                      ] + self.cvr_layer_sizes + [2]
         acts = ["relu" for _ in range(len(self.cvr_layer_sizes))] + [None]
